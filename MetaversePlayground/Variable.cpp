@@ -18,8 +18,13 @@
 
 
 int main() {
-	int a; // 변수 a(int형 타입의 변수를 선언)
+	int a = 10; // 변수 a(int형 타입의 변수를 선언)
 	int b; // 변수 b
 
 	float c; // 실수형 데이터타입인 변수 c를 선언
+
+	// 콤마를 이요하여 둘 이상의 변수를 동시에 선언
+	int num, num1;
+
+	std::cout << "위에서 선언한 변수 a의 값은 : " << a << std::endl;
 }
