@@ -13,16 +13,25 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\20240903">
+      <UniqueIdentifier>{6a2d1484-a260-43d1-b4ed-c4a00f0b3c3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\20240902">
+      <UniqueIdentifier>{45b6e8ec-d63a-4fb3-917b-793b659ee51c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Variable.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="DataType.cpp">
+      <Filter>소스 파일\20240903</Filter>
     </ClCompile>
     <ClCompile Include="Homework.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\20240902</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>소스 파일\20240902</Filter>
+    </ClCompile>
+    <ClCompile Include="Variable.cpp">
+      <Filter>소스 파일\20240902</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
