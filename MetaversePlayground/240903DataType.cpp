@@ -12,8 +12,8 @@
 ====== 기본 자료형의 종류와 데이터의 표현 범위=====
 자료형				크기(byte)
 char				1
-short				2
-int					4
+short				2			-32.~+32
+int					4			-21억~+21억~
 long				
 long long			
 

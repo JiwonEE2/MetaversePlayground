@@ -21,16 +21,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DataType.cpp">
+    <ClCompile Include="240903DataType.cpp">
       <Filter>소스 파일\20240903</Filter>
     </ClCompile>
-    <ClCompile Include="Homework.cpp">
+    <ClCompile Include="240902Homework.cpp">
       <Filter>소스 파일\20240902</Filter>
     </ClCompile>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="240902Main.cpp">
       <Filter>소스 파일\20240902</Filter>
     </ClCompile>
-    <ClCompile Include="Variable.cpp">
+    <ClCompile Include="240902Variable.cpp">
       <Filter>소스 파일\20240902</Filter>
     </ClCompile>
   </ItemGroup>
