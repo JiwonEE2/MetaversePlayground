@@ -36,5 +36,8 @@
     <ClCompile Include="240903Operater.cpp">
       <Filter>소스 파일\20240903</Filter>
     </ClCompile>
+    <ClCompile Include="240903Homework.cpp">
+      <Filter>소스 파일\20240903</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
