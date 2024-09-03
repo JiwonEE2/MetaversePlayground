@@ -17,9 +17,9 @@ int					4			-21억~+21억~
 long				
 long long			
 
-실수형
-float				
-double				
+실수형 (소수점 정밀도 차이)
+float				4
+double				8
 
 bool
 */
@@ -33,4 +33,34 @@ int main() {
 	std::cout << "float 형의 크기 : " << sizeof(float) << "바이트" << std::endl;
 	std::cout << "double 형의 크기 : " << sizeof(double) << "바이트" << std::endl;
 	std::cout << "bool 형의 크기 : " << sizeof(bool) << "바이트" << std::endl;
+
+	std::cout << "=========================================" << std::endl;
+
+	//int a = 'b'; // 아스키 코드 번호 출력(98)
+	//char num1 = 100; // 아스키 코드 100번째의 문자 출력(d)
+	//std::cout << a << std::endl;
+	//std::cout << num1 << std::endl;
+
+	char num1 = 1;
+	char num2 = 2;
+
+	char result = 0;
+
+	short num3 = 300;
+	short num4 = 200;
+	short result1 = 0;
+
+	std::cout << "변수 num1의 사이즈 : " << sizeof(num1) << std::endl; // 4
+	std::cout << "변수 num2의 사이즈 : " << sizeof(num2) << std::endl; // 2
+	std::cout << "변수 result의 사이즈 : " << sizeof(result) << std::endl; // 1
+	std::cout << "=========================================" << std::endl;
+	std::cout << "변수 num3의 사이즈 : " << sizeof(num3) << std::endl;
+	std::cout << "변수 num4의 사이즈 : " << sizeof(num4) << std::endl;
+	std::cout << "변수 result1의 사이즈 : " << sizeof(result1) << std::endl;
+
+	std::cout << "char 변수 num1+num2의 사이즈 : " << sizeof(num1 + num2) << std::endl;
+	std::cout << "short 변수 num3+num4의 사이즈 : " << sizeof(num3 + num4) << std::endl;
+
+	float a = 3.141592; // int 형일 경우 3
+	std::cout << a << std::endl;
 }

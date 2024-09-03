@@ -17,6 +17,8 @@
 	ex) HelloWorld
 - 스네이크 : 띄어쓰기가 필요한 곳에 언더스코어 삽입(_)
 	ex) hello_world
+- 헝가리안 : 이름 앞에 데이터 타입 명시.
+	ex) str_helloworld
 */
 
 //	[3. cout 으로 캐릭터 그리기]
