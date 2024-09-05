@@ -60,5 +60,14 @@
     <ClCompile Include="240905Loop01.cpp">
       <Filter>소스 파일\20240905</Filter>
     </ClCompile>
+    <ClCompile Include="240906Homework.cpp">
+      <Filter>소스 파일\20240905</Filter>
+    </ClCompile>
+    <ClCompile Include="240905While.cpp">
+      <Filter>소스 파일\20240905</Filter>
+    </ClCompile>
+    <ClCompile Include="240905Main.cpp">
+      <Filter>소스 파일\20240905</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -77,20 +77,28 @@ int main() {
 	}
 
 	// 다중 for
+	// 바깥쪽 for
 	for (int i = 0; i < 3; i++) {
+		// 안쪽 for
 		for (int k = 0; k < 3; k++) {
 			std::cout << "i의 값 : " << i << "k의 값 : " << k << std::endl;
 		}
 	}
+	
+	// 출력할 총 줄의 수
+	for (int i = 1; i <= 5; i++) {
+		for (int k = 1; k <= i; k++) {
+			std::cout << "*";
+		}
+		std::cout << std::endl;
+	}
 	/*
-	i의 값 : 0k의 값 : 0
-	i의 값 : 0k의 값 : 1
-	i의 값 : 0k의 값 : 2
-	i의 값 : 1k의 값 : 0
-	i의 값 : 1k의 값 : 1
-	i의 값 : 1k의 값 : 2
-	i의 값 : 2k의 값 : 0
-	i의 값 : 2k의 값 : 1
-	i의 값 : 2k의 값 : 2
+	
+	*
+	**
+	***
+	****
+	*****
+	
 	*/
 }
