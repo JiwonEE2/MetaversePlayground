@@ -84,5 +84,11 @@
     <ClCompile Include="240906Array1.cpp">
       <Filter>소스 파일\20240906</Filter>
     </ClCompile>
+    <ClCompile Include="240906Shuffle.cpp">
+      <Filter>소스 파일\20240906</Filter>
+    </ClCompile>
+    <ClCompile Include="240906Homework.cpp">
+      <Filter>소스 파일\20240906</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
