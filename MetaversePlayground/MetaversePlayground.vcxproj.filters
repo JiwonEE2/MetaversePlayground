@@ -72,7 +72,7 @@
     <ClCompile Include="240905Main.cpp">
       <Filter>소스 파일\20240905</Filter>
     </ClCompile>
-    <ClCompile Include="240906a.cpp">
+    <ClCompile Include="240906Main.cpp">
       <Filter>소스 파일\20240906</Filter>
     </ClCompile>
   </ItemGroup>
