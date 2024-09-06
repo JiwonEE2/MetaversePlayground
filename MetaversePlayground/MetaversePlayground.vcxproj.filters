@@ -75,5 +75,8 @@
     <ClCompile Include="240906Main.cpp">
       <Filter>소스 파일\20240906</Filter>
     </ClCompile>
+    <ClCompile Include="240906FuncOver.cpp">
+      <Filter>소스 파일\20240906</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
