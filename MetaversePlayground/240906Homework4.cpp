@@ -19,12 +19,37 @@ int MoneyBetMoney(int money) {
 	}
 }
 
+void CardPick() {
+	cout << "카드를 뽑았습니다.\n";
+	// 인덱스 뽑기
+	int index = rand() % 48;
+	cout << "뽑힌 인덱스 : " << index << "\n";
+}
+
 int main() {
-	// 1. 파산 여부 확인 및 베팅
+	// [게임흐름]
+	// 1. 파산 여부와 횟수 확인
+	// 2. 3개의 카드 뽑기
+	// 3. 베팅
+	// 4. 결과 출력 및 소지금 수정
+	// 위를 반복
+	// 5. 게임 종료
+
+	srand(time(NULL));
 	int money = 10000;
-	cout << "~~카드게임 시작~~\n";
-	int bet = MoneyBetMoney(money);
+	int minMoney = 100;
+	int count = 0;
+	cout << "~~월남뽕 시작~~\n";
 
+	// 1. 소지금과 횟수 확인
+	while (money >= minMoney || count <= 16) {
+		// 2. 카드 3개 뽑기
+		for (int i = 0;i < 3;i++) {
+			CardPick();
+		}
+		int bet = MoneyBetMoney(money);
+	}
 
-	cout << "파산..";
+	// 5. 게임종료
+	cout << "종료..";	
 }
