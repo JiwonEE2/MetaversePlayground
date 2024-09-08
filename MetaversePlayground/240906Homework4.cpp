@@ -1,7 +1,17 @@
 #include<iostream>
 using namespace std;
-// 베팅 금액 확인 함수
+
+
+void CardPick() {
+	cout << "카드를 뽑았습니다.\n";
+	// 인덱스 뽑기
+	int index = rand() % 48;
+	cout << "뽑힌 인덱스 : " << index << "\n";
+}
+
+// 베팅액 반환 함수
 // 매개변수 : 사용자의 소지금
+// 반환값 : 베팅액
 int MoneyBetMoney(int money) {
 	while (money > 100) {
 		cout << "소지금 : " << money << "\n베팅금액 : ";
@@ -17,13 +27,6 @@ int MoneyBetMoney(int money) {
 		}
 		return bet;
 	}
-}
-
-void CardPick() {
-	cout << "카드를 뽑았습니다.\n";
-	// 인덱스 뽑기
-	int index = rand() % 48;
-	cout << "뽑힌 인덱스 : " << index << "\n";
 }
 
 int main() {
@@ -43,10 +46,14 @@ int main() {
 
 	// 1. 소지금과 횟수 확인
 	while (money >= minMoney || count <= 16) {
+		// 판수 출력
+		count++;
+		cout << "==== " << count << "판 째 ====\n";
 		// 2. 카드 3개 뽑기
 		for (int i = 0;i < 3;i++) {
 			CardPick();
 		}
+		// 3. 베팅액 반환
 		int bet = MoneyBetMoney(money);
 	}
 
