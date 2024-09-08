@@ -3,17 +3,7 @@ using namespace std;
 
 
 void IndexPick() {
-	int index;
-	// 중복 시 다시 뽑기
-	bool isSame;
-	do {
-		index = rand() % 48;
-		isSame = false;
-		for (int i = 0;i < 48;i++) {
-			
-		}
-	} while (isSame == true);
-	cout << "카드를 뽑았습니다.\n뽑힌 인덱스 : " << index << "\n";
+	
 
 }
 
@@ -59,9 +49,24 @@ int main() {
 		count++;
 		cout << "==== " << count << "판 째 ====\n";
 		int usedIndex[48];
-		// 2. 카드 3개 뽑기
+		// 2. 중복 없이 카드 3개 뽑기
+		int index;
+		bool isSame;		
 		for (int i = 0;i < 3;i++) {
-			IndexPick();
+			// 중복 시 다시 뽑기
+			do {
+				index = rand() % 48;
+				isSame = false;
+				for (int i = 0; i < 48; i++) {
+					if (usedIndex[i] == index) {
+						isSame = true;
+						break;
+					}
+				}
+			} while (isSame == true);
+			cout << "카드를 뽑았습니다.\n뽑힌 인덱스 : " << index << "\n";
+			// 사용된 인덱스에 저장
+			usedIndex[count * 3 - (3 - i)] = index;
 		}
 		// 3. 베팅액 반환
 		int bet = MoneyBetMoney(money);
