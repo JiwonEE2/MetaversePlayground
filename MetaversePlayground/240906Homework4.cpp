@@ -2,11 +2,19 @@
 using namespace std;
 
 
-void CardPick() {
-	cout << "카드를 뽑았습니다.\n";
-	// 인덱스 뽑기
-	int index = rand() % 48;
-	cout << "뽑힌 인덱스 : " << index << "\n";
+void IndexPick() {
+	int index;
+	// 중복 시 다시 뽑기
+	bool isSame;
+	do {
+		index = rand() % 48;
+		isSame = false;
+		for (int i = 0;i < 48;i++) {
+			
+		}
+	} while (isSame == true);
+	cout << "카드를 뽑았습니다.\n뽑힌 인덱스 : " << index << "\n";
+
 }
 
 // 베팅액 반환 함수
@@ -32,26 +40,28 @@ int MoneyBetMoney(int money) {
 int main() {
 	// [게임흐름]
 	// 1. 파산 여부와 횟수 확인
-	// 2. 3개의 카드 뽑기
+	// 2. 사용된 인덱스 배열 선언(메인 전체에서 사용)
+	// 2. 3개의 카드 뽑기(배열 전달 포인터로만 가능)
 	// 3. 베팅
 	// 4. 결과 출력 및 소지금 수정
 	// 위를 반복
 	// 5. 게임 종료
 
-	srand(time(NULL));
 	int money = 10000;
 	int minMoney = 100;
 	int count = 0;
 	cout << "~~월남뽕 시작~~\n";
+	srand(time(NULL));
 
 	// 1. 소지금과 횟수 확인
 	while (money >= minMoney || count <= 16) {
 		// 판수 출력
 		count++;
 		cout << "==== " << count << "판 째 ====\n";
+		int usedIndex[48];
 		// 2. 카드 3개 뽑기
 		for (int i = 0;i < 3;i++) {
-			CardPick();
+			IndexPick();
 		}
 		// 3. 베팅액 반환
 		int bet = MoneyBetMoney(money);
