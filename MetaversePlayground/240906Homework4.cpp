@@ -25,7 +25,6 @@ int main() {
 	cout << "~~카드게임 시작~~\n";
 	int bet = MoneyBetMoney(money);
 
-	// 게임 시작
-	//game(money, bet);
+
 	cout << "파산..";
 }
