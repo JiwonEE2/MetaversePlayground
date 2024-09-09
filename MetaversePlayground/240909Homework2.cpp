@@ -71,16 +71,16 @@ void DisplayCard(Card c) {
 	switch (c.number)
 	{
 	case 1:
-		cout << "A \n";
+		cout << "A \t";
 		break;
 	case 11:
-		cout << "J \n";
+		cout << "J \t";
 		break;
 	case 12:
-		cout << "Q \n";
+		cout << "Q \t";
 		break;
 	case 13:
-		cout << "K \n";
+		cout << "K \t";
 		break;
 	default:
 		cout << c.number << " \t";
