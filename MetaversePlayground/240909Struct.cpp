@@ -21,6 +21,11 @@ struct Student {
 	int phoneNumber;
 };
 
+// 출력함수
+void Print(int a, int b) {
+
+}
+
 struct Point {
 	int x;			// 멤버변수
 	int y;			// 멤버변수
@@ -72,7 +77,7 @@ int main() {
 	cout << "전화번호 : " << st.phoneNumber << endl;
 
 	cout << "=================================================\n";
-	// 
+	
 	Point p;
 	p.x = 10;	// 각 멤버에 할당
 	p.y = 20;
@@ -81,6 +86,8 @@ int main() {
 	p.Print();
 
 	Point p1 = { 50,120 };	// 생성과 동시에 초기화
+	cout << "구조체 p.x의 값 : " << p1.x << endl;
+	cout << "구조체 p.y의 값 : " << p1.y << endl;
 
 	// 3.
 	Person per[3];
@@ -115,9 +122,7 @@ int main() {
 
 	double distance = CalculateDistance(point1, point2);
 
-	cout << "두 점 사이의 거리 : " << distance << endl;
-
-	
+	cout << "두 점 사이의 거리 : " << distance << endl;	
 }
 
 void Point::Print() {

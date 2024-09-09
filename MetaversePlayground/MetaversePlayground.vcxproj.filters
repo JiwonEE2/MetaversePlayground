@@ -108,10 +108,10 @@
     <ClCompile Include="240909Homework.cpp">
       <Filter>소스 파일\20240909</Filter>
     </ClCompile>
-    <ClCompile Include="240909teacher_Wall.cpp">
+    <ClCompile Include="240909Homework2.cpp">
       <Filter>소스 파일\20240909</Filter>
     </ClCompile>
-    <ClCompile Include="240909Homework2.cpp">
+    <ClCompile Include="240909WallNam.cpp">
       <Filter>소스 파일\20240909</Filter>
     </ClCompile>
   </ItemGroup>

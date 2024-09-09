@@ -74,6 +74,7 @@ Character Getcharacter(int n) {
 	case 3: return Character::Mage;
 	}
 }
+
 int main() {
 	Color c = Red;
 	cout << c << endl;
@@ -81,22 +82,11 @@ int main() {
 	switch (c)
 	{
 	case Red:
+		cout << "»¡°£»ö" << endl;
 		break;
 	case Green:
 		break;
 	case Black:
-		break;
-	default:
-		break;
-	}
-
-	switch (loc)
-	{
-	case Location::Inven:
-		break;
-	case Location::Town:
-		break;
-	case Location::Shop:
 		break;
 	default:
 		break;
@@ -140,8 +130,34 @@ int main() {
 		break;
 	}
 
+	switch (loc)
+	{
+	case Location::Inven:
+		break;
+	case Location::Town:
+		break;
+	case Location::Shop:
+		break;
+	default:
+		break;
+	}
+
 	int input;
 	cin >> input;
 	Character ch = Character::None;
 	ch = Getcharacter(input);
+
+	switch (ch)
+	{
+	case Character::Knight:
+		break;
+	case Character::Archer:
+		break;
+	case Character::Mage:
+		break;
+	case Character::None:
+		break;
+	default:
+		break;
+	}
 }
