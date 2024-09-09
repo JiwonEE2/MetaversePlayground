@@ -15,8 +15,25 @@ struct Card {
 	int number;
 };
 
-void CardMake() {
-
+void CardMake(Card card[]) {
+	for (int i = 0; i < 52; i++) {
+		if (i < 13) {
+			card[i].s = Spade;
+			card[i].number = i + 1;
+		}
+		else if (i < 26) {
+			card[i].s = Clover;
+			card[i].number = i + 1 - 13;
+		}
+		else if (i < 39) {
+			card[i].s = Heart;
+			card[i].number = i + 1 - 26;
+		}
+		else {
+			card[i].s = Diamond;
+			card[i].number = i + 1 - 39;
+		}
+	}
 }
 
 void ShuffleCard(Card card[]) {
@@ -75,21 +92,8 @@ int main() {
 	Card card[52];
 	// 카드 만들어야함!!!
 
-	for (int i = 0; i < 52; i++) {
-		if (i < 13) {
-			card[i].s = Spade;
-		}
-		else if (i < 26) {
-			card[i].s = Clover;
-		}
-		else if (i < 39) {
-			card[i].s = Heart;
-		}
-		else {
-			card[i].s = Diamond;
-		}
-		card[i].number = i + 1;
-	}
+	CardMake(card);
+	
 
 	srand(time(0));		// time(NULL) 과 다른 의미
 
