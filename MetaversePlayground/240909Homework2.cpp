@@ -5,10 +5,12 @@
 //ex) 카드를 나타내는 구조체
 //ex) 문양을 나타내는 열거형
 
+#include<iostream>
+using namespace std;
+
 enum Shape
 {
-	Dia,
-	heart
+	Dia, heart, Spade, Clover
 };
 
 struct Card

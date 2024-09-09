@@ -37,20 +37,37 @@ int main() {
 			// 여기서 모양셋팅
 			switch (shape[i])
 			{
-			case 0:cout << "♠"; break;
-			case 1:cout << "♣"; break;
-			case 2:cout << "◆"; break;
-			case 3:cout << "♥"; break;
+			case 0:
+				cout << "♠";
+				break;
+			case 1:
+				cout << "♣";
+				break;
+			case 2:
+				cout << "◆";
+				break;
+			case 3:
+				cout << "♥";
+				break;
 			}
 
 			// 숫자 셋팅
 			switch (number[i])
 			{
-			case 1:cout << "A \n"; break;
-			case 11:cout << "J \n"; break;
-			case 12:cout << "Q \n"; break;
-			case 13:cout << "K \n"; break;
-			default:cout << number[i] << " \t";				break;
+			case 1:
+				cout << "A \n";
+				break;
+			case 11:
+				cout << "J \n";
+				break;
+			case 12:
+				cout << "Q \n";
+				break;
+			case 13:
+				cout << "K \n";
+				break;
+			default:
+				cout << number[i] << " \t";				break;
 			}
 		}	// end of for
 

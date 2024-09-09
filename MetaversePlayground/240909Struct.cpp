@@ -77,7 +77,7 @@ int main() {
 	cout << "전화번호 : " << st.phoneNumber << endl;
 
 	cout << "=================================================\n";
-	
+
 	Point p;
 	p.x = 10;	// 각 멤버에 할당
 	p.y = 20;
@@ -122,7 +122,7 @@ int main() {
 
 	double distance = CalculateDistance(point1, point2);
 
-	cout << "두 점 사이의 거리 : " << distance << endl;	
+	cout << "두 점 사이의 거리 : " << distance << endl;
 }
 
 void Point::Print() {
