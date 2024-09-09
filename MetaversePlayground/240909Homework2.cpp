@@ -68,34 +68,25 @@ void DisplayCard(Card c) {
 }
 
 int main() {
-	int shape[3];	// 문양
-	int number[3];
-
 	Card card[52];
 
 	srand(time(0));		// time(NULL) 과 다른 의미
 
-	ShuffleCard(card);
-
-	
+	ShuffleCard(card);	
 
 	int betting;
 	int money = 10000;
 
-	int useCard = 0;
-
-
-	
+	int useCard = 0;	
 
 	while (true)
 	{
+		
 		for (int i = 0; i < 3; i++) {
-			//shape[i] = card[i + useCard] / 13;		// 문양계산 (0~3)
-			//number[i] = card[i + useCard] % 13 + 1;	// 숫자 (1~13)
+			DisplayCard(card[i + useCard]);			
+		}
 
-			
-		}	// end of for
-
+		useCard += 3;
 		cout << "소지금 : " << money << endl;
 		cout << "베팅액 : ";
 		cin >> betting;
@@ -109,7 +100,7 @@ int main() {
 
 		// 보여지는 카드가 2장에 A<B, A>B
 		// A<C<B, A>C>B
-		if (number[0]<number[2] && number[2]<number[1] || number[0]>number[2] && number[2]>number[1]) {
+		if (card[useCard].number<card[2 + useCard].number && card[2 + useCard].number<card[1 + useCard].number || card[useCard].number>card[2 + useCard].number && card[2 + useCard].number>card[1 + useCard].number) {
 			money += betting;
 			cout << betting << "획득\n";
 		}
@@ -117,7 +108,6 @@ int main() {
 			money -= betting;
 			cout << betting << "잃었다\n";
 		}
-		useCard += 3;
 		cout << "현재 사용한 카드 수 : " << useCard << "\n";
 		if (useCard == 51)break;
 	}
