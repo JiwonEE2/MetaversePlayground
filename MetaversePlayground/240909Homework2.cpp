@@ -109,7 +109,9 @@ int main() {
 		// 3개의 카드 뽑기. 마지막카드는 숨기기!
 		for (int i = 0; i < 3; i++) {
 			Card c = card[i + useCard];
-			DisplayCard(c);
+			if (i < 2) {
+				DisplayCard(c);
+			}
 		}
 		useCard += 3;
 
