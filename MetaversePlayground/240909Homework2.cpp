@@ -15,6 +15,10 @@ struct Card {
 	int number;
 };
 
+void CardMake() {
+
+}
+
 void ShuffleCard(Card card[]) {
 	int dest, sour;
 
@@ -69,6 +73,23 @@ void DisplayCard(Card c) {
 
 int main() {
 	Card card[52];
+	// 카드 만들어야함!!!
+
+	for (int i = 0; i < 52; i++) {
+		if (i < 13) {
+			card[i].s = Spade;
+		}
+		else if (i < 26) {
+			card[i].s = Clover;
+		}
+		else if (i < 39) {
+			card[i].s = Heart;
+		}
+		else {
+			card[i].s = Diamond;
+		}
+		card[i].number = i + 1;
+	}
 
 	srand(time(0));		// time(NULL) 과 다른 의미
 
@@ -80,10 +101,10 @@ int main() {
 	int useCard = 0;	
 
 	while (true)
-	{
-		
+	{		
 		for (int i = 0; i < 3; i++) {
-			DisplayCard(card[i + useCard]);			
+			Card c = card[i + useCard];
+			DisplayCard(c);			
 		}
 
 		useCard += 3;
