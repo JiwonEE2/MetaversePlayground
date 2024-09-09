@@ -83,37 +83,39 @@ void DisplayCard(Card c) {
 		cout << "K \n";
 		break;
 	default:
-		cout << c.number << " \t";				
+		cout << c.number << " \t";
 		break;
 	}
 }
 
 int main() {
 	Card card[52];
-	// 카드 만들어야함!!!
-
+	// 카드 만드는 함수
 	CardMake(card);
-	
 
+	// 시간에 대해 랜덤 세팅
 	srand(time(0));		// time(NULL) 과 다른 의미
 
-	ShuffleCard(card);	
+	// 카드 셔플 함수
+	ShuffleCard(card);
 
 	int betting;
 	int money = 10000;
 
-	int useCard = 0;	
+	int useCard = 0;
 
 	while (true)
-	{		
+	{
+		// 3개의 카드 뽑기. 마지막카드는 숨기기!
 		for (int i = 0; i < 3; i++) {
 			Card c = card[i + useCard];
-			DisplayCard(c);			
+			DisplayCard(c);
 		}
-
 		useCard += 3;
-		cout << "소지금 : " << money << endl;
-		cout << "베팅액 : ";
+
+		// 베팅 시작
+		cout << "\n소지금 : " << money;
+		cout << "\n베팅액 : ";
 		cin >> betting;
 
 		if (money < 1000) {
@@ -121,11 +123,17 @@ int main() {
 			break;
 		}
 
-		if (betting<1000 || betting>money)continue;
+		if (betting<1000 || betting>money) {
+			continue;
+		}
 
 		// 보여지는 카드가 2장에 A<B, A>B
 		// A<C<B, A>C>B
-		if (card[useCard].number<card[2 + useCard].number && card[2 + useCard].number<card[1 + useCard].number || card[useCard].number>card[2 + useCard].number && card[2 + useCard].number>card[1 + useCard].number) {
+		int first = card[useCard].number;
+		int second = card[useCard + 1].number;
+		int third = card[useCard + 2].number;
+
+		if (first < third && third < second || second < third && third < first) {
 			money += betting;
 			cout << betting << "획득\n";
 		}
