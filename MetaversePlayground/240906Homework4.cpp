@@ -2,7 +2,7 @@
 using namespace std;
 
 
-void IndexPick() {
+void BetweenCheck() {
 	
 
 }
@@ -30,8 +30,10 @@ int MoneyBetMoney(int money) {
 int main() {
 	// [게임흐름]
 	// 1. 파산 여부와 횟수 확인
-	// 2. 사용된 인덱스 배열 선언(메인 전체에서 사용)
-	// 2. 3개의 카드 뽑기(배열 전달 포인터로만 가능)
+	// 2-1. 사용된 인덱스 배열 선언(메인 전체에서 사용)
+	// 2-2. 3개의 카드 뽑기(배열 전달 포인터로만 가능)
+	// 2-3. 인덱스1, 2 오름차순 정렬
+	// 2-4. 결과 계산
 	// 3. 베팅
 	// 4. 결과 출력 및 소지금 수정
 	// 위를 반복
@@ -50,26 +52,37 @@ int main() {
 		cout << "==== " << count << "판 째 ====\n";
 		int usedIndex[48];
 		// 2. 중복 없이 카드 3개 뽑기
-		int index;
+		int index[3];
 		bool isSame;		
 		for (int i = 0;i < 3;i++) {
 			// 중복 시 다시 뽑기
 			do {
-				index = rand() % 48;
+				index[i] = rand() % 48;
 				isSame = false;
-				for (int i = 0; i < 48; i++) {
-					if (usedIndex[i] == index) {
+				for (int j = 0; j < 48; j++) {
+					if (usedIndex[j] == index[i]) {
 						isSame = true;
 						break;
 					}
 				}
 			} while (isSame == true);
-			cout << "카드를 뽑았습니다.\n뽑힌 인덱스 : " << index << "\n";
+			cout << "카드를 뽑았습니다.\n뽑힌 인덱스 : " << index[i]<< "\n";
 			// 사용된 인덱스에 저장
-			usedIndex[count * 3 - (3 - i)] = index;
+			usedIndex[count * 3 - (3 - i)] = index[i];
 		}
+		// 2-3. 인덱스1, 2 오름차순 정렬
+		if (index[0] > index[1]) {
+			int temp = index[0];
+			index[0] = index[1];
+			index[1] = temp;
+		}
+		cout << "정렬된 인덱스 : " << index[1] << ", " << index[2] << "\n";
+		
 		// 3. 베팅액 반환
 		int bet = MoneyBetMoney(money);
+
+		// 4. 결과 출력
+		BetweenCheck();
 	}
 
 	// 5. 게임종료
