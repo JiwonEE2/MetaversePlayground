@@ -67,7 +67,8 @@ int main() {
 				cout << "K \n";
 				break;
 			default:
-				cout << number[i] << " \t";				break;
+				cout << number[i] << " \t";				
+				break;
 			}
 		}	// end of for
 

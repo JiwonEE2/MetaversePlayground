@@ -6,69 +6,94 @@ using namespace std;
 // ex) 카드를 나타내는 구조체
 // ex) 문양을 나타내는 열거형
 
+enum Shape {
+	Spade, Clover, Diamond, Heart
+};
+
+struct Card {
+	Shape s;
+	int number;
+};
+
+void ShuffleCard(Card card[]) {
+	int dest, sour;
+
+	Card temp;
+	for (int i = 0; i < 500; i++) {
+		dest = rand() % 52;
+		sour = rand() % 52;
+
+		// 500번 셔플
+		temp = card[dest];
+		card[dest] = card[sour];
+		card[sour] = temp;
+	}
+}
+
+void DisplayCard(Card c) {
+	switch (c.s)
+	{
+	case 0:
+		cout << "♠";
+		break;
+	case 1:
+		cout << "♣";
+		break;
+	case 2:
+		cout << "◆";
+		break;
+	case 3:
+		cout << "♥";
+		break;
+	}
+
+	switch (c.number)
+	{
+	case 1:
+		cout << "A \n";
+		break;
+	case 11:
+		cout << "J \n";
+		break;
+	case 12:
+		cout << "Q \n";
+		break;
+	case 13:
+		cout << "K \n";
+		break;
+	default:
+		cout << c.number << " \t";				
+		break;
+	}
+}
+
 int main() {
-	int card[52];	// 카드 52장
 	int shape[3];	// 문양
 	int number[3];
 
-	int dest, sour, temp;
+	Card card[52];
+
+	srand(time(0));		// time(NULL) 과 다른 의미
+
+	ShuffleCard(card);
+
+	
 
 	int betting;
 	int money = 10000;
 
 	int useCard = 0;
 
-	srand(time(0));		// time(NULL) 과 다른 의미
 
-	for (int i = 0; i < 500; i++) {
-		dest = rand() % 52;
-		sour = rand() % 52;
-		temp = card[dest];
-		card[dest] = card[sour];
-		card[sour] = temp;
-	}
+	
 
 	while (true)
 	{
 		for (int i = 0; i < 3; i++) {
-			shape[i] = card[i + useCard] / 13;		// 문양계산 (0~3)
-			number[i] = card[i + useCard] % 13 + 1;	// 숫자 (1~13)
+			//shape[i] = card[i + useCard] / 13;		// 문양계산 (0~3)
+			//number[i] = card[i + useCard] % 13 + 1;	// 숫자 (1~13)
 
-			// 여기서 모양셋팅
-			switch (shape[i])
-			{
-			case 0:
-				cout << "♠";
-				break;
-			case 1:
-				cout << "♣";
-				break;
-			case 2:
-				cout << "◆";
-				break;
-			case 3:
-				cout << "♥";
-				break;
-			}
-
-			// 숫자 셋팅
-			switch (number[i])
-			{
-			case 1:
-				cout << "A \n";
-				break;
-			case 11:
-				cout << "J \n";
-				break;
-			case 12:
-				cout << "Q \n";
-				break;
-			case 13:
-				cout << "K \n";
-				break;
-			default:
-				cout << number[i] << " \t";				break;
-			}
+			
 		}	// end of for
 
 		cout << "소지금 : " << money << endl;
