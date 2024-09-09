@@ -129,11 +129,11 @@ int main() {
 
 		// 보여지는 카드가 2장에 A<B, A>B
 		// A<C<B, A>C>B
-		int first = card[useCard].number;
-		int second = card[useCard + 1].number;
-		int third = card[useCard + 2].number;
+		int first = card[useCard - 3].number;
+		int second = card[useCard - 2].number;
+		int third = card[useCard - 1].number;
 
-		if (first < third && third < second || second < third && third < first) {
+		if (second < third && third < first || first < third && third < second) {
 			money += betting;
 			cout << betting << "획득\n";
 		}
@@ -143,5 +143,5 @@ int main() {
 		}
 		cout << "현재 사용한 카드 수 : " << useCard << "\n";
 		if (useCard == 51)break;
-	}
+	}	
 }
