@@ -123,5 +123,8 @@
     <ClCompile Include="240910Pointer.cpp">
       <Filter>소스 파일\20240910</Filter>
     </ClCompile>
+    <ClCompile Include="240910Casdf.cpp">
+      <Filter>소스 파일\20240910</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
