@@ -123,7 +123,16 @@
     <ClCompile Include="240910Pointer.cpp">
       <Filter>소스 파일\20240910</Filter>
     </ClCompile>
-    <ClCompile Include="240910Casdf.cpp">
+    <ClCompile Include="240910CallByRefVSCallByVal.cpp">
+      <Filter>소스 파일\20240910</Filter>
+    </ClCompile>
+    <ClCompile Include="240910arrayPointer.cpp">
+      <Filter>소스 파일\20240910</Filter>
+    </ClCompile>
+    <ClCompile Include="240910Homework1.cpp">
+      <Filter>소스 파일\20240910</Filter>
+    </ClCompile>
+    <ClCompile Include="240910Homework2.cpp">
       <Filter>소스 파일\20240910</Filter>
     </ClCompile>
   </ItemGroup>
