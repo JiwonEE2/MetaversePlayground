@@ -52,38 +52,42 @@ int main() {
 	// 2. 셔플
 	srand(time(0));
 	TableShuffle(table);
-	 
+	/*
 	// 셔플 확인용!
 	for (int i = 0; i < 25; i++) {
 		cout << table[i].number << endl;
 	}
-	
+	*/
 
-	// 3. 빙고확인
-	
-	// 4. 입력받기
-	int input;
-	cout << "0~24 사이의 숫자를 하나 선택해 주세요 : ";
-	cin >> input;
-	// 4-2. 0~24 사이의 수를 선택하지 않은 경우
+	while (true) {
+		// 3. 빙고확인
 
-	// 5. input이 있는 위치 찾기
-	int index;
-	for (int i = 0; i < 25; i++) {
-		if (table[i].number == input) {
-			index = i;
+		// 4. 입력받기
+		int input;
+		cout << "\n0~24 사이의 숫자를 하나 선택해 주세요 : ";
+		cin >> input;
+		// 4-1. 중복된 수를 선택한 경우
+		// 4-2. 0~24 사이의 수를 선택하지 않은 경우
+
+		// 5. input이 있는 위치 찾기
+		int index;
+		for (int i = 0; i < 25; i++) {
+			if (table[i].number == input) {
+				index = i;
+			}
 		}
-	}
-	
-	// input 위치 확인용
-	cout << index;
+		/*
+		// input 위치 확인용
+		cout << index;
+		*/
 
-	// 6. 막힘 표시하고 테이블 출력하기
-	table[index].display = 'X';
-	for (int i = 0; i < 25; i++) {
-		cout << table[i].display;
-		if (i % 5 == 4) {
-			cout << "\n";
+		// 6. 막힘 표시하고 테이블 출력하기
+		table[index].display = 'X';
+		for (int i = 0; i < 25; i++) {
+			cout << table[i].display;
+			if (i % 5 == 4) {
+				cout << "\n";
+			}
 		}
-	}
+	}	
 }
