@@ -50,8 +50,6 @@ void Reference(int& n) {
 
 & -> 변수의 별칭을 전달하며 함수 내부에서 참조를 통해 직접 값을 수정
 ㄴ 함수 호출 시 변수의 참조를 암시적으로 전달. 더 안전하게 사용 가능
-
-
 */
 
 // 아래와 같은 형태는 전달이 아니라 복사가 되기 대문에
@@ -126,5 +124,4 @@ int main() {
 	cout << "스왑 전 데이터 : " << swapRefNum1 << ", " << swapRefNum2 << endl;
 	Swap_Reference(swapRefNum1, swapRefNum2);
 	cout << "스왑 후 데이터 : " << swapRefNum1 << ", " << swapRefNum2 << endl;
-
 }
