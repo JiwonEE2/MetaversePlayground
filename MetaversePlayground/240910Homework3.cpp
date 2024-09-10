@@ -23,7 +23,71 @@ void TableShuffle(Table table[]) {
 	}
 }
 
-int main() {	
+void BingoCheck(int count, Table table[]) {
+	// 3. 빙고확인
+		// 빙고의 경우의 수(경우일 땐 count++)
+		// (가로(5개)) 01234 / 56789 / ...	: %5==0부터 5개 연속
+		// (세로(5개))	0	1
+		//				5	6
+		//				10	11
+		//				15	16
+		//				20	21		/ ...		: 5개 간격으로 연속 -> ??
+		// (대각선1(1개)) 0 6 12 18 24		: 0부터 6개 간격이거나
+		// (대각선2(1개)) 4 8 ...			: 4부터 4개 간격이거나
+	int temp = 1;
+
+	// 가로로 5개 경우
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 5; j++) {
+			if (table[j + 5 * i].display == '*') {
+				temp++;
+			}
+		}
+		if (temp == 5) {
+			count++;
+		}
+		temp = 1;
+	}
+
+	// 세로로 5개 경우
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 5; j++) {
+			if (table[i + 5 * j].display == '*') {
+				temp++;
+			}
+		}
+		if (temp == 5) {
+			count++;
+		}
+		temp = 1;
+	}
+
+	// 대각선1 : 0부터 6개 간격
+	for (int i = 0; i < 25; i += 6) {
+		if (table[i].display == '*') {
+			temp++;
+		}
+	}
+	if (temp == 5) {
+		count++;
+	}
+	temp = 1;
+
+	// 대각선2 : 4부터 4개 간격
+	for (int i = 4; i < 25; i += 4) {
+		if (table[i].display == '*') {
+			temp++;
+		}
+	}
+	if (temp == 5) {
+		count++;
+	}
+	temp = 1;
+
+
+}
+
+int main() {
 	// 1. 테이블 생성
 	// 1-1. 테이블 자료형이 char 배열인 방법 -> 셔플이 가능한가? x 귀찮아짐.
 	// 1-2. 테이블 자료형이 구조체인 방법 vv 이걸로 진행해보자
@@ -59,8 +123,21 @@ int main() {
 	}
 	*/
 
-	while (true) {
+	// 3. 빙고 횟수 3회 이상일 시 종료할 while문
+	int count = 0;
+	while (count < 3) {
 		// 3. 빙고확인
+		// 빙고의 경우의 수(경우일 땐 count++)
+		// (가로(5개)) 01234 / 56789 / ...	: %5==0부터 5개 연속
+		// (세로(5개))	0	1
+		//				5	6
+		//				10	11
+		//				15	16
+		//				20	21		/ ...		: 5개 간격으로 연속 -> ??
+		// (대각선1(1개)) 0 6 12 18 24		: 0부터 6개 간격이거나
+		// (대각선2(1개)) 4 8 ...			: 4부터 4개 간격이거나
+		BingoCheck(count, table);
+		cout << "빙고 개수 : " << count << "\n";
 
 		// 4. 입력받기
 		int input;
@@ -82,12 +159,12 @@ int main() {
 		*/
 
 		// 6. 막힘 표시하고 테이블 출력하기
-		table[index].display = 'X';
+		table[index].display = '*';
 		for (int i = 0; i < 25; i++) {
 			cout << table[i].display;
 			if (i % 5 == 4) {
 				cout << "\n";
 			}
 		}
-	}	
+	}
 }
