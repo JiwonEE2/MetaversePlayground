@@ -30,7 +30,7 @@ int main() {
 
 	for (int i = 0; i < 10; i++) {
 		cout << "arr1[" << i << "]의 주소값 : " << &arr1[i] << endl;
-		cout << "(parr+" << i << ")의 주소값 : " << (parr +i)<< endl;	// 위와 같음
+		cout << "(parr+" << i << ")의 주소값 : " << (parr + i) << endl;	// 위와 같음
 	}
 
 	int arr2[10] = { 1,2,3,4,5,6,7,8,9,10 };

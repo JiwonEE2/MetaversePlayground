@@ -21,8 +21,8 @@ void PrintBox(Box b) {
 	cout << b.name << "ÀÇ ºÎÇÇ : " << b.volume << endl;
 }
 
- void CalculateVolume(Box* b) {
-	 b->volume = b->height * b->width * b->length;
+void CalculateVolume(Box* b) {
+	b->volume = b->height * b->width * b->length;
 }
 
 int main() {
