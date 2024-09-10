@@ -7,8 +7,14 @@ ex) 10 입력 시 10이 들어간 부분 막힘 표시
 #include<iostream>
 using namespace std;
 
-void TableShuffle(int table[]) {
-	int dest, temp;
+struct Table {
+	int number;
+	char display;
+};
+
+void TableShuffle(Table table[]) {
+	int dest;
+	Table temp;
 	for (int i = 0; i < 25; i++) {
 		dest = rand() % 25;
 		temp = table[dest];
@@ -24,19 +30,20 @@ int main() {
 	// 2. 셔플
 	// 3. 빙고확인
 	// 4. 입력
-	// 5-1. input이 있는 위치 찾기
-	// 5-2. 출력(막힘표시)
-	// 3~5 반복
+	// 5. input이 있는 위치 찾기
+	// 6. 출력(막힘표시)
+	// 3~6 반복
 
 	// 0. 시작
 	cout << "~~~ 빙고게임 ~~~\n\n";
 
 	// 1. 테이블 생성
-	int table[25];
+	Table table[25];
 	for (int i = 0; i < 25; i++) {
-		table[i] = i;
+		table[i].number = i;
+		table[i].display = 'O';
 		// 1-1. 테이블 표시(for문까지)
-		cout << table[i] << "\t";
+		cout << table[i].display;
 		if (i % 5 == 4) {
 			cout << "\n";
 		}
@@ -45,12 +52,12 @@ int main() {
 	// 2. 셔플
 	srand(time(0));
 	TableShuffle(table);
-	// 
-	//// 셔플 확인용!
-	//for (int i = 0; i < 25; i++) {
-	//	cout << table[i] << endl;
-	//}
-	//
+	 
+	// 셔플 확인용!
+	for (int i = 0; i < 25; i++) {
+		cout << table[i].number << endl;
+	}
+	
 
 	// 3. 빙고확인
 	
@@ -63,12 +70,12 @@ int main() {
 	// 5-1. input이 있는 위치 찾기
 	int index;
 	for (int i = 0; i < 25; i++) {
-		if (table[i] == input) {
+		if (table[i].number == input) {
 			index = i;
 		}
 	}
-	//
-	//// input 위치 확인용!
-	//cout << index;
-	//
+	
+	// input 위치 확인용
+	cout << index;
+	
 }
