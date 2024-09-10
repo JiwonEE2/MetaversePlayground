@@ -67,7 +67,7 @@ int main() {
 	cin >> input;
 	// 4-2. 0~24 사이의 수를 선택하지 않은 경우
 
-	// 5-1. input이 있는 위치 찾기
+	// 5. input이 있는 위치 찾기
 	int index;
 	for (int i = 0; i < 25; i++) {
 		if (table[i].number == input) {
@@ -77,5 +77,13 @@ int main() {
 	
 	// input 위치 확인용
 	cout << index;
-	
+
+	// 6. 막힘 표시하고 테이블 출력하기
+	table[index].display = 'X';
+	for (int i = 0; i < 25; i++) {
+		cout << table[i].display;
+		if (i % 5 == 4) {
+			cout << "\n";
+		}
+	}
 }
