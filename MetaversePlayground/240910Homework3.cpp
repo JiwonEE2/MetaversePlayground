@@ -44,9 +44,19 @@ int main() {
 	
 	// 4. 입력받기
 	int input;
-	cout << "0~25 사이의 숫자를 하나 선택해 주세요 : ";
+	cout << "0~24 사이의 숫자를 하나 선택해 주세요 : ";
 	cin >> input;
+	// 4-2. 0~24 사이의 수를 선택하지 않은 경우
 
 	// 5-1. input이 있는 위치 찾기
-
+	int index;
+	for (int i = 0; i < 25; i++) {
+		if (table[i] == input) {
+			index = i;
+		}
+	}
+	/*
+	// input 위치 확인용
+	cout << index;
+	*/
 }
