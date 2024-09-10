@@ -135,5 +135,8 @@
     <ClCompile Include="240910Homework2.cpp">
       <Filter>소스 파일\20240910</Filter>
     </ClCompile>
+    <ClCompile Include="240910Homework3.cpp">
+      <Filter>소스 파일\20240910</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

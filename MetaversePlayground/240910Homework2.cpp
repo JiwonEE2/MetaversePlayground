@@ -21,13 +21,16 @@ void PrintBox(Box b) {
 	cout << b.name << "의 부피 : " << b.volume << endl;
 }
 
-void CalcurateVolume(Box b) {
-	b.volume=
+ void CalculateVolume(Box b) {
+	b.volume = b.height * b.width * b.length;
 }
 
 int main() {
 	Box b1 = { "큰 상자",2.5,10,15,500 };
+	cout << "==== volume 계산 전 ====\n";
 	PrintBox(b1);
-
-
+	Box* bpnt = &b1;
+	CalculateVolume(*bpnt);
+	cout << "==== volume 계산 후 ====\n";
+	PrintBox(*bpnt);
 }
