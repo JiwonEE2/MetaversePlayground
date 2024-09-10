@@ -23,7 +23,7 @@ void TableShuffle(Table table[]) {
 	}
 }
 
-int BingoCheck(int count, Table table[]) {
+bool BingoCheck(Table table[]) {
 	// 3. 빙고확인
 		// 빙고의 경우의 수(경우일 땐 count++)
 		// (가로(5개)) 01234 / 56789 / ...	: %5==0부터 5개 연속
@@ -35,6 +35,7 @@ int BingoCheck(int count, Table table[]) {
 		// (대각선1(1개)) 0 6 12 18 24		: 0부터 6개 간격이거나
 		// (대각선2(1개)) 4 8 ...			: 4부터 4개 간격이거나
 	int temp = 0;
+	bool isBingo = false;
 
 	// 가로로 5개 경우
 	for (int i = 0; i < 5; i++) {
@@ -44,7 +45,7 @@ int BingoCheck(int count, Table table[]) {
 			}
 		}
 		if (temp == 5) {
-			count++;
+			isBingo = true;
 		}
 		temp = 0;
 	}
@@ -57,7 +58,7 @@ int BingoCheck(int count, Table table[]) {
 			}
 		}
 		if (temp == 5) {
-			count++;
+			isBingo = true;
 		}
 		temp = 0;
 	}
@@ -69,7 +70,7 @@ int BingoCheck(int count, Table table[]) {
 		}
 	}
 	if (temp == 5) {
-		count++;
+		isBingo = true;
 	}
 	temp = 0;
 
@@ -80,11 +81,11 @@ int BingoCheck(int count, Table table[]) {
 		}
 	}
 	if (temp == 5) {
-		count++;
+		isBingo = true;
 	}
 	temp = 0;
 
-	return count;
+	return isBingo;
 }
 
 int main() {
@@ -136,7 +137,9 @@ int main() {
 		//				20	21		/ ...		: 5개 간격으로 연속 -> ??
 		// (대각선1(1개)) 0 6 12 18 24		: 0부터 6개 간격이거나
 		// (대각선2(1개)) 4 8 ...			: 4부터 4개 간격이거나
-		count=BingoCheck(count, table);
+		if (BingoCheck(table) == true) {
+			count++;
+		}
 		cout << "\n빙고 개수 : " << count << "\n";
 
 		// 4. 입력받기
