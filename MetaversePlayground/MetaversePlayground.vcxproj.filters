@@ -150,5 +150,14 @@
     <ClCompile Include="240911OperatorOver.cpp">
       <Filter>소스 파일\20240911</Filter>
     </ClCompile>
+    <ClCompile Include="240911Exercise1.cpp">
+      <Filter>소스 파일\20240911</Filter>
+    </ClCompile>
+    <ClCompile Include="240911Exercise2.cpp">
+      <Filter>소스 파일\20240911</Filter>
+    </ClCompile>
+    <ClCompile Include="240911Exercise3.cpp">
+      <Filter>소스 파일\20240911</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
