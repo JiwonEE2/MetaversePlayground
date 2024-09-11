@@ -24,12 +24,18 @@ void TableShuffle(Table table[]) {
 }
 
 // 3. 입력 받는 함수
-int UserInput() {
+int UserInput(Table table[]) {
 	int input;
 	cout << "\n0~24 사이의 숫자를 하나 선택해 주세요 : ";
 	cin >> input;
-	// 3-1. 중복된 수를 선택한 경우
-	
+	// 3-1. 중복된 수를 선택한 경우(배열 받지 말고, *인지 0인지 확인하면 더 간단할 듯)
+	for (int i = 0; i < 25; i++) {
+		if (table[i].number == input && table[i].display == '*') {
+			cout << "이미 선택했던 수입니다. 다른 수를 입력하세요\n";
+		}
+	}
+
+
 	// 3-2. 0~24 사이의 수를 선택하지 않은 경우
 
 	return input;
@@ -139,9 +145,9 @@ int main() {
 	int count = 0;
 	while (count < 3) {
 		// 4. 입력받기
-		int input = UserInput();
+		int input = UserInput(table);
 
-		
+
 
 		// 5. input이 있는 위치 찾기
 		int index;
