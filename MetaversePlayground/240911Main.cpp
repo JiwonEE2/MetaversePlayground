@@ -7,8 +7,6 @@
 - strcpy(char* dest, char* src) : 문자열을 복사
 - strcat : 문자열 연결
 - strcmp : 문자열 비교
-
-
 */
 
 #include<iostream>
@@ -39,4 +37,4 @@ int main() {
 	cout << "strcpy : " << str3 << endl;
 	strcat_s(str1, str2);		// str1을 str3에 복사
 	cout << "strcat : " << str1 << endl;
-}	
+}
