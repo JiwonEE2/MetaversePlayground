@@ -34,6 +34,9 @@
     <Filter Include="소스 파일\20240910">
       <UniqueIdentifier>{18350855-bcda-47ef-bbf1-d5d6cd87d35d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\20240911">
+      <UniqueIdentifier>{d8da8e19-0810-4428-a09c-fc171ad2730a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="240903DataType.cpp">
@@ -137,6 +140,12 @@
     </ClCompile>
     <ClCompile Include="240910Homework3.cpp">
       <Filter>소스 파일\20240910</Filter>
+    </ClCompile>
+    <ClCompile Include="240911Main.cpp">
+      <Filter>소스 파일\20240911</Filter>
+    </ClCompile>
+    <ClCompile Include="240911String.cpp">
+      <Filter>소스 파일\20240911</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
