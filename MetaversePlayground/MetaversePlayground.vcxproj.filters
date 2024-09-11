@@ -96,7 +96,7 @@
     <ClCompile Include="240906Shuffle.cpp">
       <Filter>소스 파일\20240906</Filter>
     </ClCompile>
-    <ClCompile Include="240906Homework.cpp">
+    <ClCompile Include="240906Homework1.cpp">
       <Filter>소스 파일\20240906</Filter>
     </ClCompile>
     <ClCompile Include="240906Homework2.cpp">
@@ -158,6 +158,12 @@
     </ClCompile>
     <ClCompile Include="240911Exercise3.cpp">
       <Filter>소스 파일\20240911</Filter>
+    </ClCompile>
+    <ClCompile Include="240906Exercise1.cpp">
+      <Filter>소스 파일\20240906</Filter>
+    </ClCompile>
+    <ClCompile Include="240906Exercise2.cpp">
+      <Filter>소스 파일\20240906</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
