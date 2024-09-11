@@ -57,6 +57,16 @@ int FindInput(int input, Table table[]) {
 	return index;
 }
 
+// 5. 테이블 출력 함수
+void DisplayTable(Table table[]) {
+	for (int i = 0; i < 25; i++) {
+		cout << table[i].display;
+		if (i % 5 == 4) {
+			cout << "\n";
+		}
+	}
+}
+
 int BingoCheck(int count, Table table[]) {
 	// 3. 빙고확인
 		// 빙고의 경우의 수(경우일 땐 count++)
@@ -168,24 +178,12 @@ int main() {
 
 		// 5. 막힘 표시하고 테이블 출력하기
 		table[index].display = '*';
-		for (int i = 0; i < 25; i++) {
-			cout << table[i].display;
-			if (i % 5 == 4) {
-				cout << "\n";
-			}
-		}
 
-		count = 0;
-		// 3. 빙고확인
-		// 빙고의 경우의 수(경우일 땐 count++)
-		// (가로(5개)) 01234 / 56789 / ...	: %5==0부터 5개 연속
-		// (세로(5개))	0	1
-		//				5	6
-		//				10	11
-		//				15	16
-		//				20	21		/ ...	: 5개 간격으로 연속 -> ??
-		// (대각선1(1개)) 0 6 12 18 24		: 0부터 6개 간격이거나
-		// (대각선2(1개)) 4 8 ...			: 4부터 4개 간격이거나
+		// 5. 테이블 출력 함수
+		DisplayTable(table);
+
+		// 6.빙고 확인
+		count = 0;	// 중복 문제 해결을 위함
 		count = BingoCheck(count, table);
 		cout << "\n빙고 개수 : " << count << "\n";
 	}
