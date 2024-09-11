@@ -23,6 +23,18 @@ void TableShuffle(Table table[]) {
 	}
 }
 
+// 3. 입력 받는 함수
+int UserInput() {
+	int input;
+	cout << "\n0~24 사이의 숫자를 하나 선택해 주세요 : ";
+	cin >> input;
+	// 3-1. 중복된 수를 선택한 경우
+	
+	// 3-2. 0~24 사이의 수를 선택하지 않은 경우
+
+	return input;
+}
+
 int BingoCheck(int count, Table table[]) {
 	// 3. 빙고확인
 		// 빙고의 경우의 수(경우일 땐 count++)
@@ -92,10 +104,10 @@ int main() {
 	// 1-1. 테이블 자료형이 char 배열인 방법 -> 셔플이 가능한가? x 귀찮아짐.
 	// 1-2. 테이블 자료형이 구조체인 방법 vv 이걸로 진행해보자
 	// 2. 셔플
-	// 3. 빙고확인
 	// 4. 입력
 	// 5. input이 있는 위치 찾기
 	// 6. 출력(막힘표시)
+	// 3. 빙고확인
 	// 3~6 반복
 
 	// 0. 시작
@@ -126,14 +138,10 @@ int main() {
 	// 3. 빙고 횟수 3회 이상일 시 종료할 while문
 	int count = 0;
 	while (count < 3) {
-		
-
 		// 4. 입력받기
-		int input;
-		cout << "\n0~24 사이의 숫자를 하나 선택해 주세요 : ";
-		cin >> input;
-		// 4-1. 중복된 수를 선택한 경우
-		// 4-2. 0~24 사이의 수를 선택하지 않은 경우
+		int input = UserInput();
+
+		
 
 		// 5. input이 있는 위치 찾기
 		int index;
