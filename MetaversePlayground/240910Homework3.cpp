@@ -34,11 +34,27 @@ int UserInput(Table table[]) {
 			cout << "이미 선택했던 수입니다. 다른 수를 입력하세요\n";
 		}
 	}
-
-
-	// 3-2. 0~24 사이의 수를 선택하지 않은 경우
+	// 3-2. 0~24 사이의 수를 선택하지 않은 경우 (break나 continue 등이 없기 때문에 제대로된 오류 방지가 안되는 상태)
+	if (input < 0 || input>24) {
+		cout << "0과 24사이의 수를 선택하세요\n";
+	}
 
 	return input;
+}
+
+// 4. input 위치 찾는 함수
+int FindInput(int input, Table table[]) {
+	int index;
+	for (int i = 0; i < 25; i++) {
+		if (table[i].number == input) {
+			index = i;
+		}
+	}
+	/*
+	// input 위치 확인용
+	cout << index;
+	*/
+	return index;
 }
 
 int BingoCheck(int count, Table table[]) {
@@ -144,24 +160,13 @@ int main() {
 	// 3. 빙고 횟수 3회 이상일 시 종료할 while문
 	int count = 0;
 	while (count < 3) {
-		// 4. 입력받기
+		// 3. 입력받기
 		int input = UserInput(table);
 
+		// 4. input이 있는 위치 찾기
+		int index = FindInput(input,table);		
 
-
-		// 5. input이 있는 위치 찾기
-		int index;
-		for (int i = 0; i < 25; i++) {
-			if (table[i].number == input) {
-				index = i;
-			}
-		}
-		/*
-		// input 위치 확인용
-		cout << index;
-		*/
-
-		// 6. 막힘 표시하고 테이블 출력하기
+		// 5. 막힘 표시하고 테이블 출력하기
 		table[index].display = '*';
 		for (int i = 0; i < 25; i++) {
 			cout << table[i].display;
