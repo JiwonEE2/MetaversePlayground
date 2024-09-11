@@ -35,6 +35,6 @@ int main() {
 
 	strcpy_s(str3, str1);		// str1을 str3에 복사
 	cout << "strcpy : " << str3 << endl;
-	strcat_s(str1, str2);		// str1을 str3에 복사
+	strcat_s(str1, str2);		// str1에 str2를 연결
 	cout << "strcat : " << str1 << endl;
 }
