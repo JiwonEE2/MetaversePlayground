@@ -22,14 +22,19 @@ ex) 10 입력 시 10이 들어간 부분 막힘 표시
 #include<iostream>
 using namespace std;
 
-struct Table {
-	int number;
-	char display;
+class cTable {
+	int cNumber;
+	char cDisplay;
+
+public:
+	cTable(int tableNumber, char tableDisplay) :cNumber(tableNumber), cDisplay(tableDisplay) {
+
+	}
 };
 
-void TableShuffle(Table table[]) {
+void TableShuffle(cTable table[]) {
 	int dest;
-	Table temp;
+	cTable temp;
 	for (int i = 0; i < 25; i++) {
 		dest = rand() % 25;
 		temp = table[dest];
@@ -39,7 +44,7 @@ void TableShuffle(Table table[]) {
 }
 
 // 3. 입력 받는 함수
-int UserInput(Table table[]) {
+int UserInput(cTable table[]) {
 	int input;
 	cout << "\n0~24 사이의 숫자를 하나 선택해 주세요 : ";
 	cin >> input;
@@ -58,7 +63,7 @@ int UserInput(Table table[]) {
 }
 
 // 4. input 위치 찾는 함수
-int FindInput(int input, Table table[]) {
+int FindInput(int input, cTable table[]) {
 	int index;
 	for (int i = 0; i < 25; i++) {
 		if (table[i].number == input) {
@@ -73,7 +78,7 @@ int FindInput(int input, Table table[]) {
 }
 
 // 5. 테이블 출력 함수
-void DisplayTable(Table table[]) {
+void DisplayTable(cTable table[]) {
 	for (int i = 0; i < 25; i++) {
 		cout << table[i].display;
 		if (i % 5 == 4) {
@@ -82,7 +87,7 @@ void DisplayTable(Table table[]) {
 	}
 }
 
-int BingoCheck(Table table[]) {
+int BingoCheck(cTable table[]) {
 	// 3. 빙고확인
 		// 빙고의 경우의 수(경우일 땐 count++)
 		// (가로(5개)) 01234 / 56789 / ...	: %5==0부터 5개 연속
@@ -152,7 +157,7 @@ int main() {
 	cout << "~~~ 빙고게임 ~~~\n\n";
 
 	// 1. 테이블 생성
-	Table table[25];
+	cTable* table[25] = new cTable;
 	for (int i = 0; i < 25; i++) {
 		table[i].number = i;
 		table[i].display = 'O';

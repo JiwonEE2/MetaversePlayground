@@ -6,8 +6,6 @@ constructor
 
 1. 기본생성자
 - 매개변수가 없는 생성자. 명시적으로 정의하지 않는다면 컴파일러가 자동으로 제공
-
-
 */
 #include<iostream>
 using namespace std;
