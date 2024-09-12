@@ -61,10 +61,10 @@ int FindInput(int input, Table table[]) {
 			index = i;
 		}
 	}
-	/*
+
 	// input 위치 확인용
-	cout << index;
-	*/
+	//cout << index;
+
 	return index;
 }
 
@@ -78,7 +78,7 @@ void DisplayTable(Table table[]) {
 	}
 }
 
-int BingoCheck(int count, Table table[]) {
+int BingoCheck(Table table[]) {
 	// 3. 빙고확인
 		// 빙고의 경우의 수(경우일 땐 count++)
 		// (가로(5개)) 01234 / 56789 / ...	: %5==0부터 5개 연속
@@ -90,6 +90,7 @@ int BingoCheck(int count, Table table[]) {
 		// (대각선1(1개)) 0 6 12 18 24		: 0부터 6개 간격이거나
 		// (대각선2(1개)) 4 8 ...			: 4부터 4개 간격이거나
 	int temp = 0;
+	int count = 0;		// 중복문제 해결
 
 	// 가로로 5개 경우
 	for (int i = 0; i < 5; i++) {
@@ -153,8 +154,7 @@ int main() {
 		table[i].display = 'O';
 	}
 
-	// 2. 테이블 출력
-	DisplayTable(table);
+
 
 	// 2. 셔플
 	srand(time(0));
@@ -166,6 +166,9 @@ int main() {
 	}
 	*/
 
+	// 2. 테이블 출력
+	DisplayTable(table);
+
 	// 3. 빙고 횟수 3회 이상일 시 종료할 while문
 	int count = 0;
 	while (count < 3) {
@@ -173,7 +176,7 @@ int main() {
 		int input = UserInput(table);
 
 		// 4. input이 있는 위치 찾기
-		int index = FindInput(input,table);		
+		int index = FindInput(input, table);
 
 		// 5. 막힘 표시하고 테이블 출력하기
 		table[index].display = '*';
@@ -182,8 +185,7 @@ int main() {
 		DisplayTable(table);
 
 		// 6.빙고 확인
-		count = 0;	// 중복 문제 해결을 위함
-		count = BingoCheck(count, table);
+		count = BingoCheck(table);
 		cout << "\n빙고 개수 : " << count << "\n";
 	}
 }

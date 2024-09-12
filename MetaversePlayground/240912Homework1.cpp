@@ -67,7 +67,7 @@ int FindInput(int input, Table table[]) {
 	}
 	
 	// input 위치 확인용
-	cout << index;
+	//cout << index;
 	
 	return index;
 }
