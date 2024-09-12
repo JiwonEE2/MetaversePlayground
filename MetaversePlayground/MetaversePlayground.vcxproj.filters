@@ -177,5 +177,8 @@
     <ClCompile Include="240912Exercise1.cpp">
       <Filter>소스 파일\20240912</Filter>
     </ClCompile>
+    <ClCompile Include="240912Class3.cpp">
+      <Filter>소스 파일\20240912</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

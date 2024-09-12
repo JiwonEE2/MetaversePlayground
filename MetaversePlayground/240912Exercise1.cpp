@@ -7,9 +7,14 @@
 #include<iostream>
 using namespace std;
 class Rectangle {
-	int height = 10;
-	int width = 20;
+	int height;
+	int width;
 public:
+	Rectangle() {
+		height = 10;
+		width = 30;
+	}
+
 	void CalculateArea() {
 		int Area = height * width;
 		cout << Area;
