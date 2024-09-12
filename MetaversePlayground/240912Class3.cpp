@@ -8,6 +8,10 @@
 // 반드시 멤버초기화리스트를 활용하여 초기화를 진행해야 한다.
 // 생성자 본문에서는 불가
 
+// destructor
+// 객체가 소멸될 때 자동으로 호출되는 특별한 멤버함수
+// 동적 메모리 할당 해제할 때
+// 매개변수를 가질 수 없다. 반환값 x, 오버로딩 불가
 
 using namespace std;
 
@@ -42,3 +46,38 @@ public:
 		// 여기서 할 필요가 없음
 	}
 };
+
+class MyClass
+{
+public:
+	MyClass(int size);
+	~MyClass();
+
+private:
+	int* data;
+};
+
+// 생성자
+MyClass::MyClass(int size)
+{
+	data = new int[size];
+	cout << "여긴 생성자 영역" << endl;
+}
+
+// 소멸자
+MyClass::~MyClass()
+{
+	delete[] data;	// 반납. 동적 배열 할당 시 대괄호[] 필요.
+	data = nullptr;
+	cout << "여긴 소멸자 영역" << endl;
+}
+
+int main() {
+	MyClass* m = new MyClass(10);
+
+	delete m;
+
+	int MonsterCount;
+	cin >> MonsterCount;
+	//Monster* mon = new Monster[MonsterCount];
+}
