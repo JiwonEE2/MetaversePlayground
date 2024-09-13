@@ -195,10 +195,16 @@
     <ClCompile Include="240913Exercise1.cpp">
       <Filter>소스 파일\20240913</Filter>
     </ClCompile>
-    <ClCompile Include="240913Inheritance.cpp">
+    <ClCompile Include="240913Inheritance1.cpp">
       <Filter>소스 파일\20240913</Filter>
     </ClCompile>
     <ClCompile Include="240913Interitance2.cpp">
+      <Filter>소스 파일\20240913</Filter>
+    </ClCompile>
+    <ClCompile Include="240913Homework1.cpp">
+      <Filter>소스 파일\20240913</Filter>
+    </ClCompile>
+    <ClCompile Include="240913Homework2.cpp">
       <Filter>소스 파일\20240913</Filter>
     </ClCompile>
   </ItemGroup>

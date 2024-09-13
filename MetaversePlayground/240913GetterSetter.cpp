@@ -1,10 +1,3 @@
-/*
-
-
-
-
-*/
-
 #include<iostream>
 using namespace std;
 
@@ -16,7 +9,7 @@ public:
 	string GetName()const {
 		return name;
 	}
-	
+
 	// set
 	void SetName(const string& s) {
 		name = s;
