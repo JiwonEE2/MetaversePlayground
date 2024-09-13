@@ -198,7 +198,7 @@
     <ClCompile Include="240913Inheritance1.cpp">
       <Filter>소스 파일\20240913</Filter>
     </ClCompile>
-    <ClCompile Include="240913Interitance2.cpp">
+    <ClCompile Include="240913Inheritance2.cpp">
       <Filter>소스 파일\20240913</Filter>
     </ClCompile>
     <ClCompile Include="240913Homework1.cpp">
