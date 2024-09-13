@@ -189,5 +189,8 @@
     <ClCompile Include="240913Namespace.cpp">
       <Filter>소스 파일\20240913</Filter>
     </ClCompile>
+    <ClCompile Include="240913GetterSetter.cpp">
+      <Filter>소스 파일\20240913</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
