@@ -16,6 +16,8 @@ using namespace std;
 class Puzzle {
 	int number[16];
 	char key;
+	int zeroIndex;
+	int keyNum;
 
 public:
 	Puzzle() {
@@ -45,10 +47,10 @@ public:
 		}
 	}
 	// 3. 0의 위치 반환하기
-	int ZeroWhere() {
+	void ZeroWhere() {
 		for (int i = 0; i < 16; i++) {
 			if (number[i] == 0) {
-				return i;
+				zeroIndex = i;
 			}
 		}
 	}
@@ -56,22 +58,33 @@ public:
 	void InputKey() {
 		cout << "wasd 키로 움직이세요\n";
 		cin >> key;
-	}
-	// 5. 움직이기
-	void MoveNumber() {
 		switch (key)
 		{
-		case 'w':			
+			// -4 인덱스와 자리 바꾸기
+		case 'w':
+			keyNum = -4;
 			break;
+			// -1
 		case 'a':
+			keyNum = -1;
 			break;
+			// +4
 		case 's':
+			keyNum = +4;
 			break;
+			// +1
 		case 'd':
+			keyNum = +1;
 			break;
 		default:
 			break;
 		}
+	}
+	// 5. 움직이기
+	void MoveZero() {
+		int temp= number[zeroIndex +keyNum];
+		number[zeroIndex + keyNum] = number[zeroIndex];
+		number[zeroIndex] = temp;
 	}
 };
 
@@ -86,12 +99,14 @@ int main() {
 	{
 		// 2. 상태 출력
 		p.DisplayPuzzle();
+
 		// 3. 0의 위치 받기
+		p.ZeroWhere();
 
 		// 4. 입력받기
 		p.InputKey();
 
 		// 5. 움직이기
-
+		p.MoveZero();
 	}
 }
